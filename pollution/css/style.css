@@ -1,0 +1,41 @@
+body {
+  background-color: #440011;
+}
+canvas {
+border: solid 2px #339933;
+/*   background-color: #CCFFFF; */
+/*   background-color: #CCFFFF; */
+/*   background-color: #CCFFFF; */
+/*   background-color: #CCFFFF; */
+/*   background-color: #CCFFFF; */
+/*   background-color: #CCFFFF; */
+   background-color: #336699;
+/* here I am stretching the canvas out using css */ 
+  width: 800px;
+  height: 400px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+box-shadow: 0px 0px 50px #888888;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+display:block;
+}
+h1 {
+position: relative;
+margin-left: auto;
+margin-right: auto;
+display:block;
+width: 500px;
+font-size: 3.0em;
+text-align: center;
+color: #ffc0c0;
+font-family: 'Lobster', cursive;
+text-shadow: 2px 2px #888888;
+}
+p {
+color: #440011;
+text-align: center;
+padding-top: 10px;
+}
