@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Untitled</title>
+	<link rel="stylesheet" type="text/css" href="css/walking.css" />
+</head>
+<body>
+<div class="spriteFW sprite" id="sprite"></div>
+<div class="background" id="background"></div>
+<script>
+var thesprite = document.getElementById('sprite');
+var x=0;
+var y=0;
+var i=0;
+var j=0;
+var p=0;
+var direction = 0;
+var click_count = 0;
+var running = 0;
+
+window.setInterval("clicker()",10);
+window.onkeyup=function(e){
+	if (e.keyCode == 37) {
+		if ( direction < 0 )
+			direction = 0;
+	}
+	if (e.keyCode == 39) {
+		if ( direction > 0 )
+			direction = 0;
+	}
+	if (e.keyCode == 69) {
+		running = 0;
+		if ( direction > 0 ) { direction = 1; }
+		if ( direction < 0 ) { direction = -1; }
+	}
+}
+window.onkeydown=function(e){
+	document.title = e.keyCode;
+	// e (69) = run
+	// f (70) = jump
+	if (e.keyCode == 69) {
+		running = 1;
+		if ( direction > 0 ) { direction = 3; }
+		if ( direction < 0 ) { direction = -3; }
+	}
+	// left arrow
+	if (e.keyCode == 37) {
+		thesprite.className = ("sprite spriteBW");
+		direction = -1;
+		if (running == 1) {
+			direction = -3;
+		}
+		return;
+	}
+	// right arrow
+	if (e.keyCode == 39) {
+		thesprite.className = ("sprite spriteFW");
+		direction = 1;
+		if (running == 1) {
+			direction = 3;
+		}
+		return;
+	}
+ };
+
+function clicker(){
+	// this is where I will apply a cheaky little hack so that we can get variable speed for the character
+	click_count++;
+	if(i == 5){
+		j++;
+		i=0;
+	}
+	if((j==5)){
+		i=0;
+		j=0;
+	}
+	if (direction == 0) {
+		// if we aren't moving let's make the man show the first frame
+		i = 1;
+		j = 1;
+	}
+	x = -43*i;
+	y = -51*j;
+	thesprite.style.backgroundPosition= x+"px "+y+"px";
+	p=p+direction;
+	thesprite.style.left=p;
+	if (running != 1) {
+		if (click_count > 3) 
+		{
+			click_count = 0;
+			i++;
+		}
+	} else {
+		i++;
+	}
+}
+</script>
+</body>
+</html>

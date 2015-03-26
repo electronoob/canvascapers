@@ -1,0 +1,42 @@
+
+<html>
+
+
+<head>
+<title>Untitled</title>
+	<link rel="stylesheet" type="text/css" href="css/megaman.css" />
+</head>
+
+
+
+<body>
+
+
+<div class="sprite" id="sprite"></div>
+
+
+<script>
+
+
+
+var thesprite = document.getElementById('sprite');
+
+var x=-600;
+var y=-980;
+
+window.setInterval("clicker()",300);
+//window.setInterval("javascript function",milliseconds);
+thesprite.style.backgroundPosition= x+"px "+y+"px";
+//alert(thesprite.style.backgroundPosition);
+
+function clicker(){
+
+if(x< -800){x=-600;}
+x=x-47;
+thesprite.style.backgroundPosition= x+"px "+y+"px";
+}
+
+
+</script>
+</body>
+</html>
